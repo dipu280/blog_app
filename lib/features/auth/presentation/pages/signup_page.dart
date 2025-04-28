@@ -12,30 +12,50 @@ class SignupPage extends StatefulWidget {
 class _SignupPageState extends State<SignupPage> {
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
         
         body: Padding(
-          padding: EdgeInsets.only(left: 20, right: 20),
+          padding: const EdgeInsets.only(left: 20, right: 20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
+              const Text(
                 'Signup.',
                 style: TextStyle(
                   fontSize: 50,
                 
                  fontWeight: FontWeight.bold),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 30,
               ),
-                 AuthField(hintText: 'Name', ),
-                 SizedBox(height: 10,),
-                 AuthField(hintText: 'Email',),
-                 SizedBox(height: 10,),
-                 AuthField(hintText: 'Passowrd',),
-                 SizedBox(height: 20,),
-                 AuthGradientButton()
+                 const AuthField(hintText: 'Name', ),
+                 const SizedBox(height: 10,),
+                 const AuthField(hintText: 'Email',),
+                 const SizedBox(height: 10,),
+                 const AuthField(hintText: 'Passowrd',),
+                 const SizedBox(height: 20,),
+                 const AuthGradientButton(),
+                 const SizedBox(height: 20,),
+                 RichText(
+                  text: const TextSpan(
+                    text: 'Dont have an account?',
+                    style: TextStyle(
+                      fontSize: 16,
+                      color: Colors.pinkAccent,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: ' Sign in',
+                        style: TextStyle(
+                          fontSize: 18,
+                          color: Colors.blue,
+                        ),
+                      ),
+                    ],
+                  ),
+                 ),
+
             ],
           ),
         ),
