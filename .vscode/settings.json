@@ -1,3 +1,4 @@
 {
-    "cmake.sourceDirectory": "G:/dipu/flutter/flutter/flutter new/block_app/windows/flutter"
+    "cmake.sourceDirectory": "G:/dipu/flutter/flutter/flutter new/block_app/windows/flutter",
+    "cmake.ignoreCMakeListsMissing": true
 }
