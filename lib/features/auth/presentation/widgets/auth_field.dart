@@ -25,7 +25,13 @@ class AuthField extends StatelessWidget {
         }
         return null;
       },
-      
+      obscureText: isObscureText,
+      obscuringCharacter: '*',
+      style: const TextStyle(
+        fontSize: 17,
+        fontWeight: FontWeight.w500,
+        color: Colors.white,
+      ),
     );
   }
 }

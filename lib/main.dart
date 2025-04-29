@@ -1,5 +1,6 @@
 import 'package:block_app/core/theme/theme.dart';
-import 'package:block_app/features/auth/presentation/pages/signup_page.dart' show SignupPage;
+import 'package:block_app/features/auth/presentation/pages/login_page.dart';
+// import 'package:block_app/features/auth/presentation/pages/signup_page.dart' show SignupPage;
 import 'package:flutter/material.dart';
 
 void main() {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Block App',
       theme: AppTheme.darkThemeMode,
-      home: const SignupPage(),
+      home: const LoginPage(),
     );
   }
 }

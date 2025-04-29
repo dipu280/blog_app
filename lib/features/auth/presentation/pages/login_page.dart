@@ -2,23 +2,21 @@ import 'package:block_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:block_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 
-class SignupPage extends StatefulWidget {
-  const SignupPage({super.key});
+class LoginPage extends StatefulWidget {
+  const LoginPage({super.key});
 
   @override
-  State<SignupPage> createState() => _SignupPageState();
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _SignupPageState extends State<SignupPage> {
+class _LoginPageState extends State<LoginPage> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
-  final nameController = TextEditingController();
   final formKey = GlobalKey<FormState>();
   @override
   void dispose() {
     emailController.dispose();
     passwordController.dispose();
-    nameController.dispose();
     super.dispose();
   }
   @override
@@ -35,19 +33,13 @@ class _SignupPageState extends State<SignupPage> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  'Signup.',
+                  'Sign In.',
                   style: TextStyle(
                     fontSize: 50,
                   
                    fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(
-                  height: 30,
-                ),
-                    AuthField(
-                    hintText: 'Name',
-                    controller: nameController,
-                     ),
+                
                    const SizedBox(height: 10,),
 
                    AuthField(
@@ -68,14 +60,14 @@ class _SignupPageState extends State<SignupPage> {
 
                    RichText(
                     text:  TextSpan(
-                      text: 'Already have an account?',
+                      text: 'Don\'t have an account?',
                       style:Theme.of(context).textTheme.titleMedium ?.copyWith(
                         fontSize: 16,
                         color: Colors.white,
                         fontWeight: FontWeight.bold),
                       children: [
                         TextSpan(
-                          text: ' Sign in',
+                          text: ' Sign Up',
                           
                           style:Theme.of(context).textTheme.titleMedium ?.copyWith(
                             fontSize: 16,
