@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Block App',
+      title: 'Blog App',
       theme: AppTheme.darkThemeMode,
       home: const LoginPage(),
     );
