@@ -1,8 +1,13 @@
+import 'package:block_app/features/auth/presentation/pages/login_page.dart';
 import 'package:block_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:block_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 
 class SignupPage extends StatefulWidget {
+  static route()=>  MaterialPageRoute(
+                        builder:(context)
+                         =>const SignupPage() ,
+                         );
   const SignupPage({super.key});
 
   @override
@@ -25,7 +30,7 @@ class _SignupPageState extends State<SignupPage> {
   Widget build(BuildContext context) {
    // _formKey.currentState!.validate();
     return Scaffold(
-        
+        appBar: AppBar(),
         body: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),
           child: Form(
@@ -63,27 +68,32 @@ class _SignupPageState extends State<SignupPage> {
                     ),
                    const SizedBox(height: 20,),
 
-                   const AuthGradientButton(),
+                   const AuthGradientButton(buttonText:'Sing Up' ,),
                    const SizedBox(height: 20,),
 
-                   RichText(
-                    text:  TextSpan(
-                      text: 'Already have an account?',
-                      style:Theme.of(context).textTheme.titleMedium ?.copyWith(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                      children: [
-                        TextSpan(
-                          text: ' Sign in',
-                          
-                          style:Theme.of(context).textTheme.titleMedium ?.copyWith(
-                            fontSize: 16,
-                            color: Colors.blueAccent                                                                                                                                                                                                                               ,
-                            fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                   GestureDetector(
+                    onTap: () {
+                       Navigator.push(context,LoginPage.route());
+                    },
+                     child: RichText(
+                      text:  TextSpan(
+                        text: 'Already have an account?',
+                        style:Theme.of(context).textTheme.titleMedium ?.copyWith(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                        children: [
+                          TextSpan(
+                            text: ' Sign in',
+                            
+                            style:Theme.of(context).textTheme.titleMedium ?.copyWith(
+                              fontSize: 16,
+                              color: Colors.blueAccent                                                                                                                                                                                                                               ,
+                              fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                     ),
                    ),
             
               ],

@@ -1,8 +1,13 @@
+import 'package:block_app/features/auth/presentation/pages/signup_page.dart';
 import 'package:block_app/features/auth/presentation/widgets/auth_field.dart';
 import 'package:block_app/features/auth/presentation/widgets/auth_gradient_button.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
+  static route()=>  MaterialPageRoute(
+                        builder:(context)
+                         =>const LoginPage() ,
+                         );
   const LoginPage({super.key});
 
   @override
@@ -55,27 +60,35 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                    const SizedBox(height: 20,),
 
-                   const AuthGradientButton(),
+                   const AuthGradientButton(
+                    buttonText: 'Login',
+                   ),
                    const SizedBox(height: 20,),
 
-                   RichText(
-                    text:  TextSpan(
-                      text: 'Don\'t have an account?',
-                      style:Theme.of(context).textTheme.titleMedium ?.copyWith(
-                        fontSize: 16,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold),
-                      children: [
-                        TextSpan(
-                          text: ' Sign Up',
-                          
-                          style:Theme.of(context).textTheme.titleMedium ?.copyWith(
-                            fontSize: 16,
-                            color: Colors.blueAccent                                                                                                                                                                                                                               ,
-                            fontWeight: FontWeight.bold),
-                        ),
-                      ],
-                    ),
+                   GestureDetector(
+                     onTap: (){
+                      Navigator.push(context,SignupPage.route());
+                     },
+                     child: RichText(
+                      text:  TextSpan(
+                        text: 'Don\'t have an account?',
+                        style:Theme.of(context).textTheme.titleMedium
+                         ?.copyWith(
+                          fontSize: 14,
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold),
+                        children: [
+                          TextSpan(
+                            text: ' Sign Up',
+                            
+                            style:Theme.of(context).textTheme.titleMedium ?.copyWith(
+                              fontSize: 16,
+                              color: Colors.blueAccent                                                                                                                                                                                                                               ,
+                              fontWeight: FontWeight.bold),
+                          ),
+                        ],
+                      ),
+                     ),
                    ),
             
               ],
